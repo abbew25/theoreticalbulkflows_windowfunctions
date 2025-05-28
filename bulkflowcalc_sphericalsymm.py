@@ -38,9 +38,9 @@ def read_in_powerspectrum(cosmo: tuple, redshift: float):
     kh, z, pk = results.get_matter_power_spectrum(minkh=1e-4, maxkh=10.0, npoints=1000)
 
     k = (
-        kh * (H0 / 100.0)
-    )  # convert to 1/Mpc from h/Mpc to be consistent with how the code was originally written using Class
-    pk = pk[0] / ((H0 / 100.0) ** 3)  # convert to Mpc^3/h^3 from Mpc^3
+        kh 
+    )  
+    pk = pk[0] * ((H0 / 100.0) )  
     return k, pk
 
 
