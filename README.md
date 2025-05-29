@@ -11,3 +11,6 @@
 	test_code_1dBulkflowintegral_sphere.py - wrote just to quickly 1d integral over spherical tophat for comparison to results in literature for BF expectation and 1-sigma uncertainty - and to check expected result for Bulk Flow amplitude from fft is correct.
 	testcodefft.py - wrote to check correct scaling after scipy function for fft is applied to discrete data.
 	bulkflowcalc_sphericalsymm.py - gives a bulk flow for a top hat (or can be simply modified for gaussian 3d dist.) for a spherical geometry. Radius can be changed in settings object.
+
+
+Thanks for Sam Hinton for improvements to this code. 
