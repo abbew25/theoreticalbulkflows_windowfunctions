@@ -40,7 +40,7 @@ def read_in_powerspectrum(cosmo: tuple, redshift: float):
     k = (
         kh 
     )  
-    pk = pk[0] * ((H0 / 100.0) )  
+    pk = pk[0] 
     return k, pk
 
 
