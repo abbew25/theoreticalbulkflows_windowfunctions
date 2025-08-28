@@ -1,19 +1,22 @@
 
+A simple repository for theoretical calculations that relate to galaxy bulk flows. The codes in this repo may be useful for some. Running the makefile will set up a UV virtual environment will all required packages to run the scripts below. Power spectrum calculations rely on CAMB. 
 
 # Some useful codes for plotting bulk flows or window functions.
 
-calculate_bulkflowvector_varyinggeometries.py - computes the BF for any spherical geometry if the window function is given and makes plots of the results for different geometries/scales and angular shapes. Seems to be bug free now. User should experiment with number of grid cells (gridsize) for the discrete points that are fourier transformed to make sure the resolution is good enough for accurate results. For the given cosmology the Bulk Flow for a uniform distribution with a size r = 150/h Mpc should be approx 130 km/s, for comparison. Can also compare results to test_code_1dBulkflowintegral_sphere.py, as this should give the answer for a perfect sphere and is much simpler to compute.
+```calculate_bulkflowvector_varyinggeometries.py```: this computes the BF for any spherical geometry if the window function is given and makes plots of the results for different geometries/scales and angular shapes. Seems to be bug free now. User should experiment with number of grid cells (gridsize) for the discrete points that are fourier transformed to make sure the resolution is good enough for accurate results. For the given cosmology the Bulk Flow for a uniform distribution with a size r = 150/h Mpc should be approx 130 km/s, for comparison. Can also compare results to test_code_1dBulkflowintegral_sphere.py, as this should give the answer for a perfect sphere and is much simpler to compute.
 	
  
-plot_powerspectrum_forsurveygeometry.py - for a given radial geometry and angular cut-off will compute the window function in Fourier space for a given galaxy survey distribution. This assumes a perfect survey in a sense.
+```plot_powerspectrum_forsurveygeometry.py```: for a given radial geometry and angular cut-off will compute the window function in Fourier space for a given galaxy survey distribution. This assumes a perfect survey in a sense.
 
 
 ## Some more basic stuff for testing / checking results
 
-test_code_1dBulkflowintegral_sphere.py - wrote just to quickly 1d integral over spherical tophat for comparison to results in literature for BF expectation and 1-sigma uncertainty - and to check expected result for Bulk Flow amplitude from fft is correct.
+```test_code_1dBulkflowintegral_sphere.py```: wrote just to quickly compute the 1d integral of the power spectrum with a spherical tophat window function for comparison to results in literature for BF expectation and 1-sigma uncertainty - and to check the expected result for the Bulk Flow amplitude from a fft is correct for more complicated geometries (the script ```calculate_bulkflowvector_varyinggeometries.py``` is capable of more compled window functions). 
 	
-testcodefft.py - wrote to check correct scaling after scipy function for fft is applied to discrete data.
-	bulkflowcalc_sphericalsymm.py - gives a bulk flow for a top hat (or can be simply modified for gaussian 3d dist.) for a spherical geometry. Radius can be changed in settings object.
+```testcodefft.py```: I wrote this script to check I have the correct scaling after applying the scipy function for an fft applied to discrete data.
+
+
+```bulkflowcalc_sphericalsymm.py```: this code gives the expected bulk flow amplitude for a galaxy survey with a top hat window (or can be simply modified for gaussian 3d dist.) for a spherical geometry. The radius of the top hat can be changed in the settings object.
 
 
 # Acknowledgements 
